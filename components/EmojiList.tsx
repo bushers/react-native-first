@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { StyleSheet, FlatList, Image, Platform, Pressable } from "react-native";
 
-export default function EmojiList({ onSelect, onCloseModal }) {
+interface EmojiListProps {
+  onSelect: (item: string) => void;
+  onCloseModal: () => void;
+}
+
+export default function EmojiList({ onSelect, onCloseModal }: EmojiListProps) {
   const [emoji] = useState([
     require("../assets/images/emoji1.png"),
     require("../assets/images/emoji2.png"),

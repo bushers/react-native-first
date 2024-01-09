@@ -1,7 +1,13 @@
 import { StyleSheet, View, Pressable, Text } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
-export default function Button({ label, theme, onPress }) {
+interface ButtonProps {
+  label: string;
+  onPress: () => void;
+  theme?: "primary";
+}
+
+export default function Button({ label, theme, onPress }: ButtonProps) {
   if (theme === "primary") {
     return (
       <View
