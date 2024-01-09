@@ -15,6 +15,11 @@ import EmojiPicker from "./components/EmojiPicker";
 import EmojiList from "./components/EmojiList";
 import EmojiSticker from "./components/EmojiSticker";
 
+// Test splash loading screen
+import * as SplashScreen from "expo-splash-screen";
+SplashScreen.preventAutoHideAsync();
+setTimeout(SplashScreen.hideAsync, 1000);
+
 const PlaceholderImage = require("./assets/images/background-image.png");
 
 export default function App() {
@@ -130,7 +135,7 @@ export default function App() {
       <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
         <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
       </EmojiPicker>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </GestureHandlerRootView>
   );
 }
